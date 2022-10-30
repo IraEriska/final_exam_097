@@ -10,12 +10,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
+    
+    <style>
+        body{
+            font-family: 'cagliostro';
+            font-size: 15px;
+        }
+    </style>
     <body>
+    <center>
+        <h1 style="color: red">VIEW</h1>
         <div class="card col-5 position-absolute top-50 start-50 translate-middle">
             <div class="card">
                 <img th:src="${paket3}"  class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">KEPO</h5>
                     <p class="card-text" th:text="${paket1}"></p>
                     <p class="card-text" th:text="${paket2}"></p>
                 </div>
