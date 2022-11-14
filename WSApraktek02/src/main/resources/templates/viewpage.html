@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+        <style>
+            img{
+             box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2); 
+             max-width: 700px; 
+             margin: auto; 
+             text-align: justify; 
+             float: right;
+             display:block;
+             width:200px;
+             clear:both;
+             margin:5px;
+            }
+            fieldset{
+                
+                box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2); 
+                max-width: 500px; 
+                margin: auto; 
+                text-align: justify;
+                background-color:#809bce 
+            }
+        </style>
+    <body>
+        <fieldset>
+           
+             <h2 align="center">Kartu Tanda Mahasiswa UMY</h2>
+            <p th:text="${name}"/>
+            <p th:text="${nim}"/>
+            <p th:text="${tanggal}"/>
+            <p th:text="${email}"/>
+            <p th:text="${jurusan}"/>
+            <img th:src="${image}"/>
+            
+        </fieldset>
+       
+        
+        
+    </body>
+</html>
