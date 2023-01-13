@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <script>
+            function get(){
+                let view = document.getElementById("view");
+                
+                $.ajax({
+                    url: 'http://localhost:8080/GET',
+                    dataType: 'text', 
+                    success: function (result) {
+                        view.innerHTML = result;
+                    }
+                });
+            }
+            
+            function post(){
+                let view = document.getElementById("view");
+                let id = document.getElementById("id").value;                
+                let nosurat = document.getElementById("nosurat").value;
+                let judul = document.getElementById("judul").value;
+                let tembusan = document.getElementById("tembusan").value;
+                let file = document.getElementById("file").value;
+                let ts = document.getElementById("ts").value;
+                let json = {"id":id, "nosurat":nosurat, "judul":judul, "tembusan":tembusan, "ts":ts};
+                let obj = JSON.stringify(json);
+                $.ajax({
+                    url: 'http://localhost:8080/POST',
+                    data:obj, 
+                    method: 'POST',
+                    contentType: 'application/json',
+                    dataType: 'text', 
+                    success: function (result) {
+                        view.innerHTML = result;
+                             }
+                });
+            }
+            
+            function put(){
+                let view = document.getElementById("view");
+                let id = document.getElementById("id").value;                
+                let nosurat = document.getElementById("nosurat").value;
+                let judul = document.getElementById("judul").value;
+                let tembusan = document.getElementById("tembusan").value;
+                let file = document.getElementById("file").value;
+                let ts = document.getElementById("ts").value;
+                let json = {"id":id, "nosurat":nosurat, "judul":judul, "tembusan":tembusan, "ts":ts};
+                let obj = JSON.stringify(json);
+                $.ajax({
+                    url: 'http://localhost:8080/PUT',
+                    data:obj, 
+                    method: 'PUT',
+                    contentType: 'application/json',
+                    dataType: 'text', 
+                    success: function (result) {
+                        view.innerHTML = result;
+                             }
+                });
+            }
+            
+            function del(){
+                let view = document.getElementById("view");
+                let id = document.getElementById("id").value;                
+                let nosurat = document.getElementById("nosurat").value;
+                let judul = document.getElementById("judul").value;
+                let tembusan = document.getElementById("tembusan").value;
+                let file = document.getElementById("file").value;
+                let ts = document.getElementById("ts").value;
+                let json = {"id":id, "nosurat":nosurat, "judul":judul, "tembusan":tembusan, "ts":ts};
+                let obj = JSON.stringify(json);
+                $.ajax({
+                    url: 'http://localhost:8080/DELETE',
+                    data:obj, 
+                    method: 'DELETE',
+                    contentType: 'application/json',
+                    dataType: 'text', 
+                    success: function (result) {
+                        view.innerHTML = result;
+                             }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div>SURAT</div>
+        <div>Id</div>
+        <input type="text" id="id" name="id">
+        
+        <div>No_Surat</div>
+        <input type="text" id="nosurat" name="nosurat">
+        
+        <div>judul</div>
+        <input type="text" id="judul" name="judul">
+        
+        <div>Tembusan</div>
+        <input type="text" id="tembusan" name="tembusan">
+        
+        <div>File</div>
+        <input type="file" id="file" name="file"
+        
+        <hr>
+        
+        <button onclick="get()">GET</button>
+        
+        <button onclick="post()">POST</button>
+        
+        <button onclick="put()">PUT</button>
+        
+        <button onclick="del()">DELETE</button>
+        <br><br>
+        
+        <div id="view">
+    </body>
+</html>
+   
